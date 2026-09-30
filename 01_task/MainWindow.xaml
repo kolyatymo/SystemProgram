@@ -1,0 +1,37 @@
+﻿<Window x:Class="_01_task.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_01_task"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        <ToolBar DockPanel.Dock="Top">
+            <Button FontSize="15" Click="RefreshClick">Refresh</Button>
+            <Menu>
+                <MenuItem Background="AliceBlue" FontSize="15" Margin="10,0,10,0" Header="Timer">
+                    <RadioButton Margin="0,10,0,10" x:Name="Second1" Click="RadioClick" GroupName="group1">1 Second</RadioButton>
+                    <RadioButton Margin="0,10,0,10" x:Name="Second2" Click="RadioClick" GroupName="group1">2 Second</RadioButton>
+                    <RadioButton Margin="0,10,0,10" x:Name="Second5" Click="RadioClick" GroupName="group1">5 Second</RadioButton>
+                    <RadioButton Margin="0,10,0,10" x:Name="stop" Click="RadioClick" GroupName="group1">Stop</RadioButton>
+                </MenuItem>
+            </Menu>
+            <Button FontSize="15" Margin="10,0,10,0" Click="Kill_Click">Kill</Button>
+            <Button FontSize="15" Margin="10,0,10,0" Click="Show_Detail_Click">Show Detail</Button>
+            <Label Margin="20,0,0,0" FontSize="15" >Enter Name Process --> </Label>
+            <TextBox x:Name="Text_exe" MinWidth="200"></TextBox>
+            <Button FontSize="15" Click="Exe_Click" >Go</Button>
+        </ToolBar>
+        <DataGrid x:Name="grid" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Proccess Name" Binding="{Binding ProcessName}" />
+                <DataGridTextColumn Header="PID" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="Total Processor Time" Binding="{Binding TotalProcessorTime}" />
+                <DataGridTextColumn Header="Priority" Binding="{Binding PriorityClass}" />
+                <DataGridTextColumn Header="User Name" Binding="{Binding UserName}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        
+    </DockPanel>
+</Window>

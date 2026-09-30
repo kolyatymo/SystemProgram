@@ -1,0 +1,14 @@
+﻿<Window x:Class="_01_task.ShowAll"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_01_task"
+        mc:Ignorable="d"
+        Title="ShowAll" Height="450" Width="800">
+    <DockPanel>
+
+        <TextBlock x:Name="gridTitle" DockPanel.Dock="Top" TextAlignment="Center" FontSize="16" Margin="6">All Processes</TextBlock>
+        <DataGrid x:Name="grid" AutoGenerateColumns="True"/>
+    </DockPanel>
+</Window>
