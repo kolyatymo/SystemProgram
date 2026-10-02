@@ -26,7 +26,7 @@ internal class Program
 
                 foreach (var line in lines)
                 {
-                    string[] newlinew = line.Split(new char[] { ' ', ',', '.' }.ToString());
+                    string[] newlinew = line.Split(new char[] { ' ', ',', '.' }, StringSplitOptions.RemoveEmptyEntries);
 
                     words += newlinew.Length;
 
@@ -54,18 +54,16 @@ internal class Program
     }
     private static void Main(string[] args)
     {
-        //string fname = "Text1.txt";
 
         string[] strings = new string[] { "Text1.txt", "Text2.txt", "Text3.txt" };
 
-        int count = 0;
 
         WriteFileThread w = new WriteFileThread();
         Thread[] threads = new Thread[3];
         for (int i = 0; i < threads.Length; i++)
         {
-            threads[i] = new Thread(() => w.UpdateFile(strings[count]));
-            count++;
+            int index = i;
+            threads[i] = new Thread(() => w.UpdateFile(strings[index]));
             threads[i].Start();
         }
 
@@ -73,7 +71,13 @@ internal class Program
         {
             threads[i].Join();
         }
-
+        Console.WriteLine("---------Save all Items -----------");
+        for (int i = 0; i < strings.Length; i++)
+        {
+            Console.WriteLine($"Files Name --> {strings[i]}");
+        }
         Console.WriteLine($"Rows --> {w.Rows}, \tWords --> {w.Words}, \tPunct --> {w.Punctuation}");
+        Console.WriteLine();
+        
     }
 }
