@@ -1,0 +1,20 @@
+﻿<Window x:Class="_04_task.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_04_task"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <TextBox Grid.Column="0" x:Name="Mytext" Text="Write Text --> " TextWrapping="Wrap" Height="400" Margin="100,17,100,17"/>
+        <DockPanel Grid.Column="1" RenderTransformOrigin="0.425,0.498">
+            <Button Padding="15" Click="Click_Enter" Background="Blue" FontSize="20" Margin="5" Height="82" Width="126">Enter</Button>
+            <Button Click="SaveToFile" Background="Blue" FontSize="20" Margin="5" Padding="10" Width="126" Height="85">Save to File</Button>
+        </DockPanel>
+    </Grid>
+</Window>

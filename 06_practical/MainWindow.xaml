@@ -1,0 +1,19 @@
+﻿<Window x:Class="_06_practical.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_06_practical"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar>
+                <Label Margin="15,0,15,0" FontSize="20">file path</Label>
+                <TextBox FontSize="20" Width="100" x:Name="FilePath" MinWidth="50"></TextBox>
+                <Button Margin="15,0,15,0" FontSize="20" KeyDown="button_Enter" Click="Button_Click">Enter</Button>
+            </ToolBar>
+        </ToolBarTray>
+        <ProgressBar DockPanel.Dock="Bottom" Height="40" IsIndeterminate="True"></ProgressBar>
+    </DockPanel>
+</Window>
