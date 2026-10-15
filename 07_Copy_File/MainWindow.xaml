@@ -1,0 +1,49 @@
+﻿<Window x:Class="_07_Copy_File.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_07_Copy_File"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        d:DataContext="{d:DesignInstance local:VieModel, IsDesignTimeCreatable=True}">
+    <DockPanel LastChildFill="True">
+        <Grid Margin="5" DockPanel.Dock="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label VerticalAlignment="Center">From:</Label>
+        <TextBox Text="{Binding Source}" x:Name="srcTextBox" Margin="5" Padding="5" Grid.Column="1"></TextBox>
+        <Button Click="OpenSourceButtonClick" Margin="5" Padding="5" Grid.Column="2">Browse</Button>
+        <Label Grid.Row="1" VerticalAlignment="Center">To:</Label>
+        <TextBox Text="{Binding Destination}" x:Name="destTextBox" Margin="5" Padding="5" Grid.Row="1" Grid.Column="1"></TextBox>
+        <Button Click="OpenDestButtonClick" Margin="5" Padding="5" Grid.Row="1" Grid.Column="2">Browse</Button>
+    </Grid>
+        <Button Click="CoppyButtonClick" Padding="10" Margin="5" DockPanel.Dock="Top">Copy</Button>
+        <ProgressBar Height="30" Value="{Binding Progresss}" IsIndeterminate="{Binding IsWaiting}" DockPanel.Dock="Bottom"></ProgressBar>
+        <ListBox ItemsSource="{Binding Processes}" HorizontalContentAlignment="Stretch">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock FontWeight="Bold" MaxWidth="150" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="20,0" Text="{Binding FileName}"></TextBlock>
+                        <TextBlock MinWidth="100" Grid.Column="1" Margin="20,0">Speed : <Run Text="{Binding MegaBytesPerSecond, Mode=OneWay}"></Run>Mb/s</TextBlock>
+                        <ProgressBar Foreground="Lime" Height="10" Grid.Column="2" Margin="5" Value="{Binding Percentage}"></ProgressBar>
+                        <TextBlock Width="30" Grid.Column="3" Margin="20,0"><Run Text="{Binding PercentageInt, Mode=OneWay}"></Run>%</TextBlock>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </DockPanel>
+</Window>

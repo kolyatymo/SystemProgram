@@ -32,7 +32,7 @@ namespace _06_practical
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string file_path = FilePath.Tex;
+            string file_path = FilePath.Text;
 
             if(!File.Exists(file_path))
             {

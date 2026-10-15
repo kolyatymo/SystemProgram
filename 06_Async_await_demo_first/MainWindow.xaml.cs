@@ -43,7 +43,6 @@ namespace _06_Async_await_demo_first
             // 4
             list.Items.Add(await GeneratevalueAsync());
 
-
             // async - alow method to use await keywords
             // await - wait task without freezing
 
