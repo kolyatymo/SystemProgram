@@ -33,9 +33,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04_task", "04_task\04_task.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07_Copy_File", "07_Copy_File\07_Copy_File.csproj", "{35EED0D0-144E-43E9-8DC4-6B59A5688D8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_Parallel", "08_Parallel\08_Parallel.csproj", "{0623E226-1A8E-4CC6-8773-A013FCDA9446}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08_Parallel", "08_Parallel\08_Parallel.csproj", "{0623E226-1A8E-4CC6-8773-A013FCDA9446}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06_Task", "06_Task\06_Task.csproj", "{C6DA3E1E-C1D9-4C72-8B03-1D94455DF750}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06_Task", "06_Task\06_Task.csproj", "{C6DA3E1E-C1D9-4C72-8B03-1D94455DF750}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08_Task", "08_Task\08_Task.csproj", "{950A1965-82E8-4616-8811-C02D4B3AA387}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +113,10 @@ Global
 		{C6DA3E1E-C1D9-4C72-8B03-1D94455DF750}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6DA3E1E-C1D9-4C72-8B03-1D94455DF750}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6DA3E1E-C1D9-4C72-8B03-1D94455DF750}.Release|Any CPU.Build.0 = Release|Any CPU
+		{950A1965-82E8-4616-8811-C02D4B3AA387}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{950A1965-82E8-4616-8811-C02D4B3AA387}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{950A1965-82E8-4616-8811-C02D4B3AA387}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{950A1965-82E8-4616-8811-C02D4B3AA387}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
