@@ -44,6 +44,6 @@
             <Button Click="Dest_Directory" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1">Browse!</Button>
         </Grid>
         <Button Click="Copy_Directory" Padding="10" Margin="5" DockPanel.Dock="Top">Copy</Button>
-        <ProgressBar Height="40" DockPanel.Dock="Bottom" IsIndeterminate="True"></ProgressBar>
+        <ProgressBar x:Name="MyProgres" Minimum="0" Maximum="100" Value="0" Height="40" DockPanel.Dock="Bottom"></ProgressBar>
     </DockPanel>
 </Window>

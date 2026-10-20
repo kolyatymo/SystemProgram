@@ -18,6 +18,7 @@ namespace _07_task
     /// </summary>
     public partial class MainWindow : Window
     {
+        public int Progres { get; set; }
         public string Source { get; set; }
         public string Destination { get; set; }
         public MainWindow()
@@ -54,17 +55,41 @@ namespace _07_task
         {
             Directory.CreateDirectory(destination);
 
-            foreach (var F in Directory.GetFiles(source))
+            var files = Directory.GetFiles(source, "*", SearchOption.AllDirectories);
+
+            int total = files.Length;
+            int proces = 0;
+
+            foreach (var F in files)
             {
                 string FileName = System.IO.Path.GetFileName(F);
-                //File.Copy(F, FileName, true);
                 File.Copy(F, System.IO.Path.Combine(destination, FileName), true);
+                proces++;
             }
-            foreach (var Direc in Directory.GetDirectories(source))
+
+            if (total > 0)
             {
-                string DirectName = System.IO.Path.GetFileName(destination);
-                DirectoryCopy(Direc, System.IO.Path.Combine(destination, DirectName));
+                Progres = (int)((double)proces / total * 100);
+                Dispatcher.Invoke(() =>
+                {
+                    MyProgres.Value = Progres;
+                });
             }
+
+
         }
     }
 }
+
+
+/*foreach (var F in Directory.GetFiles(source))
+{
+    string FileName = System.IO.Path.GetFileName(F);
+    //File.Copy(F, FileName, true);
+    File.Copy(F, System.IO.Path.Combine(destination, FileName), true);
+}
+foreach (var Direc in Directory.GetDirectories(source))
+{
+    string DirectName = System.IO.Path.GetFileName(destination);
+    DirectoryCopy(Direc, System.IO.Path.Combine(destination, DirectName));
+}*/

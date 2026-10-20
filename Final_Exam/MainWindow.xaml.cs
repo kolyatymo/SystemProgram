@@ -30,6 +30,9 @@ namespace Final_Exam
         public MainWindow()
         {
             InitializeComponent();
+
+            MyProgressBar.Value = 0;
+
         }
 
         private void SelectDirectory_Button(object sender, RoutedEventArgs e)
@@ -69,11 +72,6 @@ namespace Final_Exam
 
             int total = files.Length;
             int proces = 0;
-
-            Dispatcher.Invoke(() =>
-            {
-                MyProgressBar.Value = 0;
-            });
 
             foreach (var f in files)
             {
